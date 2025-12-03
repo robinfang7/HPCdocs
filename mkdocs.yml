@@ -43,7 +43,7 @@ plugins:
   - search  # 保持預設的搜尋功能
   - git-revision-date-localized:
       # 格式化日期，例如 YYYY-MM-DD
-      datetime_format: "%Y-%m-%d" 
+      fallback_format: "%Y-%m-%d" 
       # 指定語系，讓月份和星期等使用中文（zh-TW）
       locale: zh-TW 
       # 允許顯示更新日期的最低權限
