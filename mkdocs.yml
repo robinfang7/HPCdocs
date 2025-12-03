@@ -3,15 +3,25 @@ site_name: HPC導覽手冊（測試版）
 # 使用最強大的 Material 主題
 theme:
   name: material
+  favicon: assets/images/logo.ico  # 網站小圖示
   logo: assets/images/logo.png   # 網站標誌
   features:
     - navigation.sections    # 左側區塊摺疊
     - navigation.indexes  # 允許點擊目錄標題
     #- toc.integrate          # 將目錄整合在左側 (像 TACC 網站那樣)
   palette: 
-    scheme: default          # default 是亮色模式，slate 是暗黑模式
-    primary: blue            # 主色調 (TACC 是藍色)
-    accent: light blue
+    - scheme: default          # default 是亮色模式，slate 是暗黑模式
+      primary: blue            # 主色調 (TACC 是藍色)
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny # 亮色模式的切換圖標
+        name: 切換到暗黑模式    
+    - scheme: slate # slate 是 Material 主題的標準暗黑模式名稱
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night # 暗黑模式的切換圖標
+        name: 切換到亮色模式
   language: zh-TW            # 設定語言為繁體中文，介面會更親切
 
 # 建議加入這些 Markdown 擴充功能，讓技術文件更專業（支援數學公式、提示框）
@@ -25,48 +35,24 @@ markdown_extensions:
 extra_javascript:
   - js/open_new_tab.js
 
+plugins:
+  - search  # 保持預設的搜尋功能
+  - git-revision-date-localized:
+      # 格式化日期，例如 YYYY-MM-DD
+      date_format: "%Y-%m-%d" 
+      # 指定語系，讓月份和星期等使用中文（zh-TW）
+      locale: zh-TW 
+      # 允許顯示更新日期的最低權限
+      enabled: true 
+      # 啟用時區
+      timezone: Asia/Taipei
+      
 # 網站結構 (導覽列)
 nav:
   - 首頁: index.md
-  - 超級電腦:
-      - 什麼是超級電腦: https://www.nchc.org.tw/Page?itemid=2&mid=4
-      - 晶創25(Nano5): https://www.nchc.org.tw/Page?itemid=2&mid=4#Nano%205
-      - 創進一號(Formrunner 1): https://www.nchc.org.tw/Page?itemid=2&mid=4#Forerunner%201
-      - 台灣杉二號(Taiwania2): https://www.nchc.org.tw/Page?itemid=2&mid=4#TAIWANIA%202
-      - 台灣杉三號(Taiwania3): https://www.nchc.org.tw/Page?itemid=2&mid=4#TAIWANIA%203
-  - iService計算資源服務網: https://www.nchc.org.tw/Page?itemid=2&mid=4#iService%E8%A8%88%E7%AE%97%E8%B3%87%E6%BA%90%E6%9C%8D%E5%8B%99%E7%B6%B2
-  - HPC管理軟體:
-    - Slurm工作排程系統: apps/management/slurm.md
-    - Lmod模組系統: apps/management/lmod.md
-  - 如何使用: 
-      - 登入超級電腦: usage/login.md
-      - 檔案傳輸: usage/file-transfer.md
-  - 應用程式:
-      - 計算化學: 
-          - Gaussian: apps/chemistry/gaussian.md
-          - ORCA: apps/chemistry/orca.md
-          - VASP: apps/chemistry/vasp.md
-          - Quantum ESPRESSO: apps/chemistry/qe.md
-          - LAMMPS: apps/chemistry/lammps.md
-      - 流體力學:
-          - OpenFOAM: apps/cfd/openfoam.md
-          - ANSYS Fluent: apps/cfd/fluent.md
-      - 分子動力學:
-          - GROMACS: apps/md/gromacs.md
-          - NAMD: apps/md/namd.md
-      - 固體力學:
-          - ABAQUS: apps/struct/abaqus.md
-          - Ansys: apps/struct/ansys.md
-          - OpenSees: apps/struct/opensees.md
-      - 數學:
-          - MATLAB: apps/math/matlab.md
-      - 深度學習: 
-          - TensorFlow: apps/ai/tensorflow.md
-          - PyTorch: apps/ai/pytorch.md
-      - Benchmark:
-          - HPL: apps/benchmark/hpl.md
-          - HPL-Mxp: apps/benchmark/hpl-mxp.md
-          - HPCG: apps/benchmark/hpcg.md
-      - Profiling Tool:
-          - Intel VTune: apps/tools/vtune.md
-          - NVIDIA Nsight: apps/tools/nsight.md
+  - 入門指南: getting-started.md
+  - 超級電腦: supercomputer.md
+  - iService: iservice.md
+  - 深入使用: dive-deeper.md
+  - 應用程式: application.md
+  - 常見問題: https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42

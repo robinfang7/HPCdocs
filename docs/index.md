@@ -8,23 +8,26 @@ hide:
 ---
 
 # HPC導覽手冊（測試版）
+網頁更新日期：{{ page.meta.git_revision_date }}
 
-本文件提供用戶學習使用NCHC的超級電腦，建議初學者先從**超級電腦**、**iService計算資源服務網**、**HPC管理軟體**、**如何使用**依序瀏覽，之後依照您的使用需求，瀏覽**應用程式**的項目。
+本文件提供用戶學習使用NCHC的超級電腦，建議初學者先從[**入門指南**](getting-started.md)瀏覽，想了解NCHC各項超級電腦請至[**超級電腦**](supercomputer.md)瀏覽，帳號與計劃管理請至[**iService**](iservice.md)瀏覽，執行相關領域的應用程式，請至[**應用程式**](application.md)瀏覽。
 
+## [入門指南](getting-started.md)
 
+## [超級電腦](supercomputer.md)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## [iService](iservice.md)
 
-## Commands
+## [深入使用超級電腦](dive-deeper.md)(先完成入門指南)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## [應用程式](application.md)
 
-## Project layout
+## [常見問題](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+---
+
+* 對iService帳號與計畫有問題，請至客服信箱 isevice@niar.org.tw
+* 對NCHC超級電腦有使用問題，請至技術信箱 isupport@niar.org.tw
+* iService客服專線 0809-091-365 (24小時客服專線)
+* 對本網站內容有意見請至Github issue留言
+
