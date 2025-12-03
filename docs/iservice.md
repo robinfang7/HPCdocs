@@ -1,4 +1,3 @@
-網頁更新日期：{{ page.meta.git_revision_date }}
 
 [iservece](https://iservice.nchc.org.tw/nchc_service/index.php)
 

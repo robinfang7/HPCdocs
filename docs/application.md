@@ -1,4 +1,4 @@
-網頁更新日期：{{ page.meta.git_revision_date }}
+
 
 - 計算化學: 
 - Gaussian: apps/chemistry/gaussian.md

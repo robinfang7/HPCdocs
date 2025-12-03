@@ -36,6 +36,9 @@ markdown_extensions:
 extra_javascript:
   - js/open_new_tab.js
 
+extra_css:
+  - extra/css/custom.css 
+
 plugins:
   - search  # 保持預設的搜尋功能
   - git-revision-date-localized:

@@ -8,7 +8,6 @@ hide:
 ---
 
 # HPC導覽手冊（測試版）
-網頁更新日期：{{ page.meta.git_revision_date }}
 
 本文件提供用戶學習使用NCHC的超級電腦，建議初學者先從[**入門指南**](getting-started.md)瀏覽，想了解NCHC各項超級電腦請至[**超級電腦**](supercomputer.md)瀏覽，帳號與計劃管理請至[**iService**](iservice.md)瀏覽，執行相關領域的應用程式，請至[**應用程式**](application.md)瀏覽。
 

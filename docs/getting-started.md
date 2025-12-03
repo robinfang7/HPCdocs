@@ -1,4 +1,3 @@
-網頁更新日期：{{ page.meta.git_revision_date }}
 
 1. 註冊帳號
 2. [設定主機帳號與OTP](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=774)
