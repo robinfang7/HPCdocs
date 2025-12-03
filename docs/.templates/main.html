@@ -1,0 +1,7 @@
+{% if page.meta.git_revision_date %}
+  <p class="md-content__date">
+    **網頁最後更新：** {{ page.meta.git_revision_date }}
+  </p>
+{% endif %}
+
+{{ page.content }}

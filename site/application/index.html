@@ -9,24 +9,26 @@
       
       
       
+        <link rel="prev" href="../dive-deeper/">
+      
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/logo.ico">
+      <link rel="icon" href="../assets/images/logo.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Fluent - HPC導覽手冊（測試版）</title>
+        <title>應用程式 - HPC導覽手冊（測試版）</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -81,9 +83,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="頁首">
-    <a href="../../.." title="HPC導覽手冊（測試版）" class="md-header__button md-logo" aria-label="HPC導覽手冊（測試版）" data-md-component="logo">
+    <a href=".." title="HPC導覽手冊（測試版）" class="md-header__button md-logo" aria-label="HPC導覽手冊（測試版）" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fluent
+              應用程式
             
           </span>
         </div>
@@ -204,9 +206,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="HPC導覽手冊（測試版）" class="md-nav__button md-logo" aria-label="HPC導覽手冊（測試版）" data-md-component="logo">
+    <a href=".." title="HPC導覽手冊（測試版）" class="md-nav__button md-logo" aria-label="HPC導覽手冊（測試版）" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     HPC導覽手冊（測試版）
@@ -221,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -248,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -275,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../supercomputer/" class="md-nav__link">
+      <a href="../supercomputer/" class="md-nav__link">
         
   
   
@@ -302,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../iservice/" class="md-nav__link">
+      <a href="../iservice/" class="md-nav__link">
         
   
   
@@ -329,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dive-deeper/" class="md-nav__link">
+      <a href="../dive-deeper/" class="md-nav__link">
         
   
   
@@ -353,10 +355,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../application/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -372,6 +381,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -436,9 +446,39 @@
 
 
 
-  <h1>Fluent</h1>
+  <h1>應用程式</h1>
 
-
+<p>網頁更新日期：{{ page.meta.git_revision_date }}</p>
+<ul>
+<li>計算化學: </li>
+<li>Gaussian: apps/chemistry/gaussian.md</li>
+<li>ORCA: (apps/chemistry/orca.md)</li>
+<li>VASP: (apps/chemistry/vasp.md)</li>
+<li>Quantum ESPRESSO: apps/chemistry/qe.md</li>
+<li>LAMMPS: apps/chemistry/lammps.md</li>
+<li>流體力學:</li>
+<li>OpenFOAM: apps/cfd/openfoam.md</li>
+<li>ANSYS Fluent: apps/cfd/fluent.md</li>
+<li>分子動力學:</li>
+<li>GROMACS: apps/md/gromacs.md</li>
+<li>NAMD: apps/md/namd.md</li>
+<li>固體力學:</li>
+<li>ABAQUS: apps/struct/abaqus.md</li>
+<li>Ansys: apps/struct/ansys.md</li>
+<li>OpenSees: apps/struct/opensees.md</li>
+<li>數學:</li>
+<li>MATLAB: apps/math/matlab.md</li>
+<li>深度學習: </li>
+<li>TensorFlow: apps/ai/tensorflow.md</li>
+<li>PyTorch: apps/ai/pytorch.md</li>
+<li>Benchmark:</li>
+<li>HPL: apps/benchmark/hpl.md</li>
+<li>HPL-Mxp: apps/benchmark/hpl-mxp.md</li>
+<li>HPCG: apps/benchmark/hpcg.md</li>
+<li>Profiling Tool:</li>
+<li>Intel VTune: apps/tools/vtune.md</li>
+<li>NVIDIA Nsight: apps/tools/nsight.md</li>
+</ul>
 
 
 
@@ -459,7 +499,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月24日 17:06:26 CST">2025年11月24日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月3日 15:11:01 CST">2025年12月3日</span>
   </span>
 
     
@@ -509,12 +549,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../js/open_new_tab.js"></script>
+        <script src="../js/open_new_tab.js"></script>
       
     
   </body>
