@@ -23,7 +23,7 @@ theme:
         icon: material/weather-night # 暗黑模式的切換圖標
         name: 切換到亮色模式
   language: zh-TW            # 設定語言為繁體中文，介面會更親切
-  custom_dir: docs/.templates
+#  custom_dir: docs/.templates
 
 # 建議加入這些 Markdown 擴充功能，讓技術文件更專業（支援數學公式、提示框）
 markdown_extensions:
@@ -36,8 +36,8 @@ markdown_extensions:
 extra_javascript:
   - js/open_new_tab.js
 
-extra_css:
-  - extra/css/custom.css 
+#extra_css:
+#  - extra/css/custom.css 
 
 plugins:
   - search  # 保持預設的搜尋功能
