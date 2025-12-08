@@ -9,19 +9,13 @@ hide:
 
 # HPC導覽手冊
 
-本文件提供用戶學習使用NCHC的超級電腦，建議初學者先從[**入門指南**](getting-started.md)瀏覽，想了解NCHC各項超級電腦請至[**超級電腦**](supercomputer.md)瀏覽，帳號與計劃管理請至[**iService**](iservice.md)瀏覽，執行相關領域的應用程式，請至[**應用程式**](application.md)瀏覽。
+本文件提供用戶學習使用NCHC的超級電腦，建議初學者先從[**入門指南**](getting-started.md)瀏覽，想了解NCHC各項超級電腦請至[**超級電腦**](supercomputer.md)瀏覽，帳號與計劃管理請至[**iService**](iservice.md)瀏覽，執行相關領域的應用程式，請至[**應用程式**](apps/application.md)瀏覽。
 
-## [入門指南](getting-started.md)
-
-## [超級電腦](supercomputer.md)
-
-## [iService](iservice.md)
-
-## [深入使用超級電腦](dive-deeper.md)(先完成入門指南)
-
-## [應用程式](application.md)
-
-## [常見問題](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42)
+## 🎯[入門指南](getting-started.md)
+## 🖥️[超級電腦](supercomputer.md)
+## 🤖[iService](iservice.md)
+## 📱[應用程式](apps/application.md)
+## 🤔[常見問題](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42)
 
 ---
 

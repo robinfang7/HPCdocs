@@ -36,14 +36,17 @@ markdown_extensions:
 extra_javascript:
   - js/open_new_tab.js
 
-#extra_css:
-#  - extra/css/custom.css 
+# --- 加入 Google Analytics 4 (GA4) 支援 ---
+extra:
+  analytics:
+    provider: google
+    property: G-RCE6GZB2CJ # 替換成您實際的 GA4 衡量 ID
 
 plugins:
   - search  # 保持預設的搜尋功能
   - git-revision-date-localized:
       # 格式化日期，例如 YYYY-MM-DD
-      fallback_format: "%Y-%m-%d" 
+      format: "%Y-%m-%d" 
       # 指定語系，讓月份和星期等使用中文（zh-TW）
       locale: zh-TW 
       # 允許顯示更新日期的最低權限
@@ -54,11 +57,10 @@ plugins:
 # 網站結構 (導覽列)
 nav:
   - 首頁: index.md
-  - 入門指南: getting-started.md
-  - 超級電腦: supercomputer.md
-  - iService: iservice.md
-  - 深入使用: dive-deeper.md
-  - 應用程式: 
+  - 🎯入門指南: getting-started.md
+  - 🖥️超級電腦: supercomputer.md
+  - 🤖iService: iservice.md
+  - 📱應用程式: 
       - 計算化學:
           - Gaussian: apps/chemistry/gaussian.md
           - ORCA: apps/chemistry/orca.md
@@ -87,4 +89,4 @@ nav:
       - Profiling Tool:
           - Intel VTune: apps/tools/vtune.md
           - NVIDIA Nsight: apps/tools/nsight.md
-  - 常見問題: https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42
+  - 🤔常見問題: https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42
