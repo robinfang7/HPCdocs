@@ -84,7 +84,7 @@ nav:
           - PyTorch: apps/ai/pytorch.md
       - Benchmark:
           - HPL: apps/benchmark/hpl.md
-          - HPL-Mxp: apps/benchmark/hpl-mxp.md
+          - HPL-MxP: apps/benchmark/hpl-mxp.md
           - HPCG: apps/benchmark/hpcg.md
       - Profiling Tool:
           - Intel VTune: apps/tools/vtune.md
