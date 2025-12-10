@@ -27,11 +27,28 @@ theme:
 
 # 建議加入這些 Markdown 擴充功能，讓技術文件更專業（支援數學公式、提示框）
 markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
+  # --- 新增：程式碼高亮設定 (讓 HPC Script 更清楚) ---
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # --- 新增：分頁功能 (適合 Windows/Mac 不同教學切換) ---
+  - pymdownx.tabbed:
+      alternate_style: true 
+  # --- 新增：支援更多圖示 ---
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
   - js/open_new_tab.js
