@@ -19,17 +19,17 @@
     b. 準備SSH連線軟體 ([MobaXterm](https://mobaxterm.mobatek.net/), Putty for Windows, Terminal(終端機) for Linux/MacOS)  
 
 ### **案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)**  
-(1) 開啟MobaXterm，點選Start local terminal    
+1. 開啟MobaXterm，點選Start local terminal    
     ![alt text](getting-started/image.png)  
-(2) 輸入ssh指令  
+2. 輸入ssh指令  
     `ssh <account>@f1-ilgn01.nchc.org.tw`  
-(3) 選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。  
+3. 選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。  
     ![alt text](getting-started/image-1.png)  
-(4) 在手機上點選推播  
+4. 在手機上點選推播  
     ![alt text](getting-started/IDExport.png)  
-(5) 完成登入創進一號節點  
+5. 完成登入創進一號節點  
     ![alt text](getting-started/image-3.png)  
-(6) 編輯`mpi_test.c`  
+6. 編輯`mpi_test.c`  
     ```c  
     #define _GNU_SOURCE  // 必須在所有 include 之前定義，以使用 sched_getcpu
     #include <stdio.h>
@@ -69,7 +69,7 @@
         return 0;
     } 
     ```  
-(7) 編輯slurm腳本 `run_mpi.slurm`，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。  
+7. 編輯slurm腳本 `run_mpi.slurm`，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。  
     ```shell
     #!/bin/bash
     #SBATCH --account=<ProjectID>      # (-A) iService Project ID
@@ -91,7 +91,7 @@
     mpirun -np 4 ./mpi_test
     echo -e "\nJob finished."
     ```   
-(8) 執行腳本`sbatch run_mpi.slurm`，產生Job ID，觀察輸出結果。   
+8. 執行腳本`sbatch run_mpi.slurm`，產生Job ID，觀察輸出結果。   
     ```shell
     [<account>@ilgn01 mpi_test]$ sbatch run_mpi.slurm
     Submitted batch job 565924
@@ -107,10 +107,10 @@
 
     Job finished.
     ```
-### **案例2：用MobaXterm登入晶創25，執行Pytorh平行程式，回傳節點和GPU核心的序號(Rank)**       
-(1) 開啟MobaXterm，輸入ssh指令  
+### **案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)**       
+1. 開啟MobaXterm，輸入ssh指令  
     `ssh <account>@nano5.nchc.org.tw`  
-(2) 編輯Pytorch程式[train_multi_gpu.py](getting-started/train_multi_gpu.py)   
+2. 編輯Pytorch程式[train_multi_gpu.py](getting-started/train_multi_gpu.py)   
     ```python
     import os
     import torch
@@ -187,11 +187,11 @@
     if __name__ == "__main__":
         main()
     ```   
-(3) 到[NVIDIA NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)網頁，用Singularity指令下載Pytorch容器映像檔  
+3. 到[NVIDIA NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)網頁，用Singularity指令下載Pytorch容器映像檔  
     ```shell
-    singularity pull pytorch_24.08-py3.sif docker://nvcr.io/nvidia/pytorch:24.08-py3
+    singularity pull pytorch_24.05-py3.sif docker://nvcr.io/nvidia/pytorch:24.05-py3
     ```   
-(4) 編輯slurm腳本`run_ddp.slurm`，索取兩個節點，每個節點有兩個GPU，引用pytorch容器  
+4. 編輯slurm腳本`run_ddp.slurm`，索取兩個節點，每個節點有兩個GPU，引用pytorch容器  
     ```shell
     #!/bin/bash
     #SBATCH -A <Project_ID>           # iService Project id
@@ -202,38 +202,40 @@
     #SBATCH --ntasks-per-node=1    # Number of MPI tasks (i.e. processes)
     #SBATCH --gres=gpu:2
     #SBATCH -o %x_%j.out          # Path to the standard output file
+    #SBATCH -t 0-00:10:00
 
     export OMP_NUM_THREADS=1
     export MASTER_ADDR=$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)
     export MASTER_PORT=29500
     echo "Starting distributed job with MASTER_ADDR=$MASTER_ADDR and MASTER_PORT=$MASTER_PORT"
 
-    # get GPU count
-    IFS=',' read -ra gpu_array <<< "$SLURM_JOB_GPUS"
-    export GPUS_PER_NODE=${#gpu_array[@]}
-
-    SIF=/path/to/pytorch_24.08-py3.sif
+    SIF=/path/to/pytorch_24.05-py3.sif
     SINGULARITY="singularity run -B /work:/work --nv $SIF"
 
     CMD="torchrun \
         --nnodes $SLURM_NNODES \
-        --nproc_per_node $GPUS_PER_NODE \
+        --nproc_per_node $SLURM_GPUS_ON_NODE \
         --rdzv_id $SLURM_JOB_ID \
         --rdzv_backend c10d \
         --rdzv_endpoint $MASTER_ADDR:$MASTER_PORT \
         train_multi_gpu.py"
 
-    RUN="srun --ntasks=$GPUS_PER_NODE --nodes=$SLURM_NNODES $SINGULARITY $CMD"
+    if [[ "$SLURM_NNODES" = 1 ]]; then
+        RUN="$SINGULARITY $CMD" # for one node
+    else
+        RUN="srun --nodes=$SLURM_NNODES --ntasks=$SLURM_NNODES $SINGULARITY $CMD" # for multi nodes
+    fi
+
     echo "$RUN"; $RUN
     echo -e "\nJob finished.\n"
     ```           
-(5) 執行腳本`sbatch run_ddp.slurm`，產生Job ID，觀察輸出結果。  
+5. 執行腳本`sbatch run_ddp.slurm`，產生Job ID，觀察輸出結果。  
     ```Shell
     [<account>@cbi-lgn01 pytorch_test]$ sbatch run_ddp.slurm
     Submitted batch job 78728
     [<account>@cbi-lgn01 pytorch_test]$ cat *78728*
     Starting distributed job with MASTER_ADDR=hgpn02 and MASTER_PORT=29500
-    srun --ntasks=2 --nodes=2 singularity run -B /work:/work --nv /work/u8880716/sif/pytorch_24.08-py3.sif torchrun  --nnodes 2  --nproc_per_node 2  --rdzv_id 78728  --rdzv_backend c10d  --rdzv_endpoint hgpn02:29500  train_multi_gpu.py
+    srun --ntasks=2 --nodes=2 singularity run -B /work:/work --nv /work/u8880716/sif/pytorch_24.05-py3.sif torchrun  --nnodes 2  --nproc_per_node 2  --rdzv_id 78728  --rdzv_backend c10d  --rdzv_endpoint hgpn02:29500  train_multi_gpu.py
 
     ....容器啟動訊息...
 
@@ -266,10 +268,40 @@
 ## 深入研究
 完成第一次使用超級電腦，接下來更深入了解超級電腦的進階使用。
 ### 資料傳輸 
+高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過FileZilla, WinSCP,scp 等軟體與指令傳輸資料從用戶電腦到HFS。   
 [晶創25](https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA)   
 [創進一號](https://man.twcc.ai/@f1-manual/transport_ip)   
 [台灣杉三號](https://man.twcc.ai/@TWCC-III-manual/SyGsFqRSt)  
-[台灣杉二號](https://man.twcc.ai/@twccdocs/doc-hfs-main-zh/%2F%40twccdocs%2Fguide-hfs-connect-to-data-transfer-node-zh)  
+[台灣杉二號](https://man.twcc.ai/@twccdocs/doc-hfs-main-zh/%2F%40twccdocs%2Fguide-hfs-connect-to-data-transfer-node-zh)   
+*  高速檔案系統預設容量是100GB，若需增加容量可參閱[HFS容量設定](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=768)。  
+*  在Terminal介面查詢HFS容量。  
+```shell
+# 晶創25
+[<account>@cbi-lgn01 ~]$ hfsquota
+PATH            USED            HARD LIMIT       USAGE %  STATUS
+home:/<account>  391347720192 B  1099511627776 B  35       ACTIVE
+
+PATH            USED             HARD LIMIT        USAGE %  STATUS
+work:/<account>  1794210246656 B  10995116277760 B  16       ACTIVE
+
+# 單位換算 1099511627776 Byte / 1024 /1024 /1024 = 1024 GB
+
+# 創進一號
+[<account>@ilgn01 ~]$ mmlsquota -u $(whoami) --block-size auto home1 work1
+                         Block Limits                                    |     File Limits
+Filesystem type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+home1      USR          29.83G         1T     1.098T       320M     none |    43156       0        0       40     none
+work1      USR          28.37G       100G       200G          0     none |       10       0        0        0     none
+
+# 台灣杉二號
+[<account>@un-ln01 ~]$ /usr/lpp/mmfs/bin/mmlsquota --block-size auto fs01 fs02
+                         Block Limits                                    |     File Limits
+Filesystem type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+fs01       USR          3.397T        20T      20.1T          0     none |  1427318       0        0        0     none NCHC_AIcls.twcc.ai
+fs02       USR          185.5G        10T      10.1T       640M     none |    90181       0        0       40     none NCHC_AIcls.twcc.ai
+
+# fs02是/home目錄，fs01是/work目錄
+```   
 ### 圖形介面登入  
 [晶創25](https://man.twcc.ai/B5MmH5TiS6qwCKYZnP7HBw)   
 [創進一號](https://man.twcc.ai/@f1-manual/thinlinc)  
@@ -277,6 +309,11 @@
 ### Open OnDemand  
 [創進一號:5.特殊工作節點操作流程](https://man.twcc.ai/@f1-manual/manual)   
 ### 查詢資源
+查詢計畫錢包額度
+```shell
+[<account>@cbi-lgn01 ~]$ wallet <ProjectID>
+PROJECT_ID: GOVxxxx32, PROJECT_NAME: NCHC-xxxxxxx-TWCC, SU_BALANCE: 482118.6382
+```  
 查詢Partition狀態，以晶創25為例  
 ```shell
 [<account>@cbi-lgn01 ~]$ sinfo

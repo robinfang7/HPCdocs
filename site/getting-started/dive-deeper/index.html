@@ -19,7 +19,7 @@
     
     
       
-        <title>資料傳輸 - HPC導覽手冊（測試版）</title>
+        <title>深入研究 - HPC導覽手冊（測試版）</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              資料傳輸
+              深入研究
             
           </span>
         </div>
@@ -1533,6 +1533,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料傳輸
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        圖形介面登入
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-ondemand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open OnDemand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查詢資源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        容器打包
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1548,24 +1611,46 @@
 
 
 
-<h1 id="_1">資料傳輸</h1>
+<h1 id="_1">深入研究</h1>
+<p>完成第一次使用超級電腦，接下來更深入了解超級電腦的進階使用。</p>
+<h2 id="_2">資料傳輸</h2>
 <p><a href="https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA">晶創25</a> <br />
 <a href="https://man.twcc.ai/@f1-manual/transport_ip">創進一號</a> <br />
 <a href="https://man.twcc.ai/@TWCC-III-manual/SyGsFqRSt">台灣杉三號</a><br />
 <a href="https://man.twcc.ai/@twccdocs/doc-hfs-main-zh/%2F%40twccdocs%2Fguide-hfs-connect-to-data-transfer-node-zh">台灣杉二號</a>  </p>
-<h1 id="_2">圖形介面登入</h1>
+<h2 id="_3">圖形介面登入</h2>
 <p><a href="https://man.twcc.ai/B5MmH5TiS6qwCKYZnP7HBw">晶創25</a> <br />
 <a href="https://man.twcc.ai/@f1-manual/thinlinc">創進一號</a><br />
 <a href="https://man.twcc.ai/@TWCC-III-manual/r1_eaoM2u">台灣杉三號</a>    </p>
-<h1 id="open-ondemand">Open OnDemand</h1>
-<p><a href="https://man.twcc.ai/@f1-manual/manual">創進一號:特殊工作節點操作流程</a>   </p>
-<h1 id="_3">查詢資源</h1>
-<p>查詢節點狀態<br />
-<code>sinfo</code><br />
-查詢節點有空的GPU<br />
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
+<h2 id="open-ondemand">Open OnDemand</h2>
+<p><a href="https://man.twcc.ai/@f1-manual/manual">創進一號:5.特殊工作節點操作流程</a>   </p>
+<h2 id="_4">查詢資源</h2>
+<p>查詢Partition狀態，以晶創25為例<br />
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sinfo
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>dev<span class="w">          </span>up<span class="w">    </span><span class="m">2</span>:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>normal<span class="w">       </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4nodes<span class="w">       </span>up<span class="w"> </span><span class="m">1</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>normal2<span class="w">      </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">      </span><span class="m">8</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">39</span>-46<span class="o">]</span>
 </span></code></pre></div></p>
-<h1 id="_4">容器打包</h1>
+<p>查詢節點有閒置的GPU，以下是晶創25有閒置GPU的節點<br />
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn02<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">32</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn03<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">24</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn04<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">14</span>,mem<span class="o">=</span>1000G,gres/gpu<span class="o">=</span><span class="m">5</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn06<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">13</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn19<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">9</span>,mem<span class="o">=</span>1200G,gres/gpu<span class="o">=</span><span class="m">6</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn39<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">5</span>,mem<span class="o">=</span>200G,gres/gpu<span class="o">=</span><span class="m">1</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn43<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">84</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
+</span></code></pre></div></p>
+<h2 id="_5">容器打包</h2>
 <p>Singularity...</p>
 
 
@@ -1587,7 +1672,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月10日 10:28:51 CST">2025年12月10日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月10日 18:02:13 CST">2025年12月10日</span>
   </span>
 
     
