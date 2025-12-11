@@ -346,10 +346,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2mobaxterm25pytorhgpurank" class="md-nav__link">
+  <a href="#2mobaxterm25pytorchgpurank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例2：用MobaXterm登入晶創25，執行Pytorh平行程式，回傳節點和GPU核心的序號(Rank)
+        案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
       
     </span>
   </a>
@@ -1719,10 +1719,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2mobaxterm25pytorhgpurank" class="md-nav__link">
+  <a href="#2mobaxterm25pytorchgpurank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例2：用MobaXterm登入晶創25，執行Pytorh平行程式，回傳節點和GPU核心的序號(Rank)
+        案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
       
     </span>
   </a>
@@ -1853,17 +1853,18 @@
 </li>
 </ol>
 <h3 id="1mobaxtermrank"><strong>案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)</strong></h3>
-<p>(1) 開啟MobaXterm，點選Start local terminal  <br />
-<img alt="alt text" src="image.png" /><br />
-(2) 輸入ssh指令<br />
-<code>ssh &lt;account&gt;@f1-ilgn01.nchc.org.tw</code><br />
-(3) 選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。<br />
-<img alt="alt text" src="image-1.png" /><br />
-(4) 在手機上點選推播<br />
-<img alt="alt text" src="IDExport.png" /><br />
-(5) 完成登入創進一號節點<br />
-<img alt="alt text" src="image-3.png" /><br />
-(6) 編輯<code>mpi_test.c</code><br />
+<ol>
+<li>開啟MobaXterm，點選Start local terminal  <br />
+<img alt="alt text" src="image.png" />  </li>
+<li>輸入ssh指令<br />
+<code>ssh &lt;account&gt;@f1-ilgn01.nchc.org.tw</code>  </li>
+<li>選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。<br />
+<img alt="alt text" src="image-1.png" />  </li>
+<li>在手機上點選推播<br />
+<img alt="alt text" src="IDExport.png" />  </li>
+<li>完成登入創進一號節點<br />
+<img alt="alt text" src="image-3.png" />  </li>
+<li>編輯<code>mpi_test.c</code><br />
     <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#define _GNU_SOURCE  </span><span class="c1">// 必須在所有 include 之前定義，以使用 sched_getcpu</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
@@ -1901,8 +1902,8 @@
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">}</span><span class="w"> </span>
-</span></code></pre></div>
-(7) 編輯slurm腳本 <code>run_mpi.slurm</code>，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。<br />
+</span></code></pre></div></li>
+<li>編輯slurm腳本 <code>run_mpi.slurm</code>，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。<br />
     <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#SBATCH --account=&lt;ProjectID&gt;      # (-A) iService Project ID</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#SBATCH --job-name=mpi_test        # (-J) Job name</span>
@@ -1922,8 +1923,8 @@
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nExecuting mpi_test...\n&quot;</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>./mpi_test
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nJob finished.&quot;</span>
-</span></code></pre></div>
-(8) 執行腳本<code>sbatch run_mpi.slurm</code>，產生Job ID，觀察輸出結果。 <br />
+</span></code></pre></div></li>
+<li>執行腳本<code>sbatch run_mpi.slurm</code>，產生Job ID，觀察輸出結果。 <br />
     <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_mpi.slurm
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">565924</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*565924*
@@ -1937,11 +1938,13 @@
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>MPI<span class="w"> </span>Rank:<span class="w"> </span><span class="m">003</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Host:<span class="w"> </span>icpnp153<span class="w"> </span><span class="p">|</span><span class="w"> </span>CPU_ID:<span class="w"> </span><span class="m">101</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Job<span class="w"> </span>finished.
-</span></code></pre></div></p>
-<h3 id="2mobaxterm25pytorhgpurank"><strong>案例2：用MobaXterm登入晶創25，執行Pytorh平行程式，回傳節點和GPU核心的序號(Rank)</strong></h3>
-<p>(1) 開啟MobaXterm，輸入ssh指令<br />
-<code>ssh &lt;account&gt;@nano5.nchc.org.tw</code><br />
-(2) 編輯Pytorch程式<a href="train_multi_gpu.py">train_multi_gpu.py</a> <br />
+</span></code></pre></div></li>
+</ol>
+<h3 id="2mobaxterm25pytorchgpurank"><strong>案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)</strong></h3>
+<ol>
+<li>開啟MobaXterm，輸入ssh指令<br />
+<code>ssh &lt;account&gt;@nano5.nchc.org.tw</code>  </li>
+<li>編輯Pytorch程式<a href="train_multi_gpu.py">train_multi_gpu.py</a> <br />
     <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.distributed</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dist</span>
@@ -2016,11 +2019,11 @@
 </span><span id="__span-3-72"><a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>
 </span><span id="__span-3-73"><a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 </span><span id="__span-3-74"><a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>    <span class="n">main</span><span class="p">()</span>
-</span></code></pre></div>
-(3) 到<a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">NVIDIA NGC Catalog</a>網頁，用Singularity指令下載Pytorch容器映像檔<br />
-    <div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>singularity<span class="w"> </span>pull<span class="w"> </span>pytorch_24.08-py3.sif<span class="w"> </span>docker://nvcr.io/nvidia/pytorch:24.08-py3
-</span></code></pre></div>
-(4) 編輯slurm腳本<code>run_ddp.slurm</code>，索取兩個節點，每個節點有兩個GPU，引用pytorch容器<br />
+</span></code></pre></div></li>
+<li>到<a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">NVIDIA NGC Catalog</a>網頁，用Singularity指令下載Pytorch容器映像檔<br />
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>singularity<span class="w"> </span>pull<span class="w"> </span>pytorch_24.05-py3.sif<span class="w"> </span>docker://nvcr.io/nvidia/pytorch:24.05-py3
+</span></code></pre></div></li>
+<li>編輯slurm腳本<code>run_ddp.slurm</code>，索取兩個節點，每個節點有兩個GPU，引用pytorch容器<br />
     <div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#SBATCH -A &lt;Project_ID&gt;           # iService Project id</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#SBATCH -J ddp_test                # job name</span>
@@ -2030,37 +2033,39 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">#SBATCH --ntasks-per-node=1    # Number of MPI tasks (i.e. processes)</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">#SBATCH --gres=gpu:2</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">#SBATCH -o %x_%j.out          # Path to the standard output file</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting distributed job with MASTER_ADDR=</span><span class="nv">$MASTER_ADDR</span><span class="s2"> and MASTER_PORT=</span><span class="nv">$MASTER_PORT</span><span class="s2">&quot;</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="c1"># get GPU count</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-ra<span class="w"> </span>gpu_array<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_JOB_GPUS</span><span class="s2">&quot;</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GPUS_PER_NODE</span><span class="o">=</span><span class="si">${#</span><span class="nv">gpu_array</span><span class="p">[@]</span><span class="si">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">#SBATCH -t 0-00:10:00</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting distributed job with MASTER_ADDR=</span><span class="nv">$MASTER_ADDR</span><span class="s2"> and MASTER_PORT=</span><span class="nv">$MASTER_PORT</span><span class="s2">&quot;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="nv">SIF</span><span class="o">=</span>/path/to/pytorch_24.05-py3.sif
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nv">SINGULARITY</span><span class="o">=</span><span class="s2">&quot;singularity run -B /work:/work --nv </span><span class="nv">$SIF</span><span class="s2">&quot;</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nv">SIF</span><span class="o">=</span>/path/to/pytorch_24.08-py3.sif
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="nv">SINGULARITY</span><span class="o">=</span><span class="s2">&quot;singularity run -B /work:/work --nv </span><span class="nv">$SIF</span><span class="s2">&quot;</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;torchrun \</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="s2">    --nnodes </span><span class="nv">$SLURM_NNODES</span><span class="s2"> \</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="s2">    --nproc_per_node </span><span class="nv">$GPUS_PER_NODE</span><span class="s2"> \</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="s2">    --rdzv_id </span><span class="nv">$SLURM_JOB_ID</span><span class="s2"> \</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="s2">    --rdzv_backend c10d \</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="s2">    --rdzv_endpoint </span><span class="nv">$MASTER_ADDR</span><span class="s2">:</span><span class="nv">$MASTER_PORT</span><span class="s2"> \</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="s2">    train_multi_gpu.py&quot;</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="nv">RUN</span><span class="o">=</span><span class="s2">&quot;srun --ntasks=</span><span class="nv">$GPUS_PER_NODE</span><span class="s2"> --nodes=</span><span class="nv">$SLURM_NNODES</span><span class="s2"> </span><span class="nv">$SINGULARITY</span><span class="s2"> </span><span class="nv">$CMD</span><span class="s2">&quot;</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RUN</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="nv">$RUN</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nJob finished.\n&quot;</span>
-</span></code></pre></div>
-(5) 執行腳本<code>sbatch run_ddp.slurm</code>，產生Job ID，觀察輸出結果。<br />
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;torchrun \</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="s2">    --nnodes </span><span class="nv">$SLURM_NNODES</span><span class="s2"> \</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="s2">    --nproc_per_node </span><span class="nv">$SLURM_GPUS_ON_NODE</span><span class="s2"> \</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="s2">    --rdzv_id </span><span class="nv">$SLURM_JOB_ID</span><span class="s2"> \</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="s2">    --rdzv_backend c10d \</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="s2">    --rdzv_endpoint </span><span class="nv">$MASTER_ADDR</span><span class="s2">:</span><span class="nv">$MASTER_PORT</span><span class="s2"> \</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="s2">    train_multi_gpu.py&quot;</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_NNODES</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="nv">RUN</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SINGULARITY</span><span class="s2"> </span><span class="nv">$CMD</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># for one node</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="k">else</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">    </span><span class="nv">RUN</span><span class="o">=</span><span class="s2">&quot;srun --nodes=</span><span class="nv">$SLURM_NNODES</span><span class="s2"> --ntasks=</span><span class="nv">$SLURM_NNODES</span><span class="s2"> </span><span class="nv">$SINGULARITY</span><span class="s2"> </span><span class="nv">$CMD</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># for multi nodes</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="k">fi</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RUN</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="nv">$RUN</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nJob finished.\n&quot;</span>
+</span></code></pre></div></li>
+<li>執行腳本<code>sbatch run_ddp.slurm</code>，產生Job ID，觀察輸出結果。<br />
     <div class="language-Shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_ddp.slurm
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">78728</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*78728*
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Starting<span class="w"> </span>distributed<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span>hgpn02<span class="w"> </span>and<span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>srun<span class="w"> </span>--ntasks<span class="o">=</span><span class="m">2</span><span class="w"> </span>--nodes<span class="o">=</span><span class="m">2</span><span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>-B<span class="w"> </span>/work:/work<span class="w"> </span>--nv<span class="w"> </span>/work/u8880716/sif/pytorch_24.08-py3.sif<span class="w"> </span>torchrun<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w">  </span>--nproc_per_node<span class="w"> </span><span class="m">2</span><span class="w">  </span>--rdzv_id<span class="w"> </span><span class="m">78728</span><span class="w">  </span>--rdzv_backend<span class="w"> </span>c10d<span class="w">  </span>--rdzv_endpoint<span class="w"> </span>hgpn02:29500<span class="w">  </span>train_multi_gpu.py
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>srun<span class="w"> </span>--ntasks<span class="o">=</span><span class="m">2</span><span class="w"> </span>--nodes<span class="o">=</span><span class="m">2</span><span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>-B<span class="w"> </span>/work:/work<span class="w"> </span>--nv<span class="w"> </span>/work/u8880716/sif/pytorch_24.05-py3.sif<span class="w"> </span>torchrun<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w">  </span>--nproc_per_node<span class="w"> </span><span class="m">2</span><span class="w">  </span>--rdzv_id<span class="w"> </span><span class="m">78728</span><span class="w">  </span>--rdzv_backend<span class="w"> </span>c10d<span class="w">  </span>--rdzv_endpoint<span class="w"> </span>hgpn02:29500<span class="w">  </span>train_multi_gpu.py
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>....容器啟動訊息...
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
@@ -2089,14 +2094,44 @@
 </span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>Mock<span class="w"> </span>training<span class="w"> </span>complete.<span class="w"> </span>All<span class="w"> </span>processes<span class="w"> </span>synchronized.
 </span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
 </span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>Job<span class="w"> </span>finished.
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ol>
 <h2 id="_2">深入研究</h2>
 <p>完成第一次使用超級電腦，接下來更深入了解超級電腦的進階使用。</p>
 <h3 id="_3">資料傳輸</h3>
-<p><a href="https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA">晶創25</a> <br />
+<p>高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過FileZilla, WinSCP,scp 等軟體與指令傳輸資料從用戶電腦到HFS。 <br />
+<a href="https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA">晶創25</a> <br />
 <a href="https://man.twcc.ai/@f1-manual/transport_ip">創進一號</a> <br />
 <a href="https://man.twcc.ai/@TWCC-III-manual/SyGsFqRSt">台灣杉三號</a><br />
-<a href="https://man.twcc.ai/@twccdocs/doc-hfs-main-zh/%2F%40twccdocs%2Fguide-hfs-connect-to-data-transfer-node-zh">台灣杉二號</a>  </p>
+<a href="https://man.twcc.ai/@twccdocs/doc-hfs-main-zh/%2F%40twccdocs%2Fguide-hfs-connect-to-data-transfer-node-zh">台灣杉二號</a> <br />
+<em>  高速檔案系統預設容量是100GB，若需增加容量可參閱<a href="https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=768">HFS容量設定</a>。<br />
+</em>  在Terminal介面查詢HFS容量。<br />
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 晶創25</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>hfsquota
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>PATH<span class="w">            </span>USED<span class="w">            </span>HARD<span class="w"> </span>LIMIT<span class="w">       </span>USAGE<span class="w"> </span>%<span class="w">  </span>STATUS
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>home:/&lt;account&gt;<span class="w">  </span><span class="m">391347720192</span><span class="w"> </span>B<span class="w">  </span><span class="m">1099511627776</span><span class="w"> </span>B<span class="w">  </span><span class="m">35</span><span class="w">       </span>ACTIVE
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>PATH<span class="w">            </span>USED<span class="w">             </span>HARD<span class="w"> </span>LIMIT<span class="w">        </span>USAGE<span class="w"> </span>%<span class="w">  </span>STATUS
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>work:/&lt;account&gt;<span class="w">  </span><span class="m">1794210246656</span><span class="w"> </span>B<span class="w">  </span><span class="m">10995116277760</span><span class="w"> </span>B<span class="w">  </span><span class="m">16</span><span class="w">       </span>ACTIVE
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># 單位換算 1099511627776 Byte / 1024 /1024 /1024 = 1024 GB</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># 創進一號</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>mmlsquota<span class="w"> </span>-u<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>home1<span class="w"> </span>work1
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">                         </span>Block<span class="w"> </span>Limits<span class="w">                                    </span><span class="p">|</span><span class="w">     </span>File<span class="w"> </span>Limits
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>Filesystem<span class="w"> </span><span class="nb">type</span><span class="w">         </span>blocks<span class="w">      </span>quota<span class="w">      </span>limit<span class="w">   </span>in_doubt<span class="w">    </span>grace<span class="w"> </span><span class="p">|</span><span class="w">    </span>files<span class="w">   </span>quota<span class="w">    </span>limit<span class="w"> </span>in_doubt<span class="w">    </span>grace<span class="w">  </span>Remarks
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>home1<span class="w">      </span>USR<span class="w">          </span><span class="m">29</span>.83G<span class="w">         </span>1T<span class="w">     </span><span class="m">1</span>.098T<span class="w">       </span>320M<span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">    </span><span class="m">43156</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">       </span><span class="m">40</span><span class="w">     </span>none
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>work1<span class="w">      </span>USR<span class="w">          </span><span class="m">28</span>.37G<span class="w">       </span>100G<span class="w">       </span>200G<span class="w">          </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">       </span><span class="m">10</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">     </span>none
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1"># 台灣杉二號</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="o">[</span>&lt;account&gt;@un-ln01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>/usr/lpp/mmfs/bin/mmlsquota<span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>fs01<span class="w"> </span>fs02
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                         </span>Block<span class="w"> </span>Limits<span class="w">                                    </span><span class="p">|</span><span class="w">     </span>File<span class="w"> </span>Limits
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>Filesystem<span class="w"> </span><span class="nb">type</span><span class="w">         </span>blocks<span class="w">      </span>quota<span class="w">      </span>limit<span class="w">   </span>in_doubt<span class="w">    </span>grace<span class="w"> </span><span class="p">|</span><span class="w">    </span>files<span class="w">   </span>quota<span class="w">    </span>limit<span class="w"> </span>in_doubt<span class="w">    </span>grace<span class="w">  </span>Remarks
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>fs01<span class="w">       </span>USR<span class="w">          </span><span class="m">3</span>.397T<span class="w">        </span>20T<span class="w">      </span><span class="m">20</span>.1T<span class="w">          </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">1427318</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span>NCHC_AIcls.twcc.ai
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>fs02<span class="w">       </span>USR<span class="w">          </span><span class="m">185</span>.5G<span class="w">        </span>10T<span class="w">      </span><span class="m">10</span>.1T<span class="w">       </span>640M<span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">    </span><span class="m">90181</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">       </span><span class="m">40</span><span class="w">     </span>none<span class="w"> </span>NCHC_AIcls.twcc.ai
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="c1"># fs02是/home目錄，fs01是/work目錄</span>
+</span></code></pre></div></p>
 <h3 id="_4">圖形介面登入</h3>
 <p><a href="https://man.twcc.ai/B5MmH5TiS6qwCKYZnP7HBw">晶創25</a> <br />
 <a href="https://man.twcc.ai/@f1-manual/thinlinc">創進一號</a><br />
@@ -2104,30 +2139,34 @@
 <h3 id="open-ondemand">Open OnDemand</h3>
 <p><a href="https://man.twcc.ai/@f1-manual/manual">創進一號:5.特殊工作節點操作流程</a>   </p>
 <h3 id="_5">查詢資源</h3>
-<p>查詢Partition狀態，以晶創25為例<br />
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sinfo
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>dev<span class="w">          </span>up<span class="w">    </span><span class="m">2</span>:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>normal<span class="w">       </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>4nodes<span class="w">       </span>up<span class="w"> </span><span class="m">1</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>normal2<span class="w">      </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">      </span><span class="m">8</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">39</span>-46<span class="o">]</span>
+<p>查詢計畫錢包額度
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>wallet<span class="w"> </span>&lt;ProjectID&gt;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>PROJECT_ID:<span class="w"> </span>GOVxxxx32,<span class="w"> </span>PROJECT_NAME:<span class="w"> </span>NCHC-xxxxxxx-TWCC,<span class="w"> </span>SU_BALANCE:<span class="w"> </span><span class="m">482118</span>.6382
+</span></code></pre></div>
+查詢Partition狀態，以晶創25為例<br />
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sinfo
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>dev<span class="w">          </span>up<span class="w">    </span><span class="m">2</span>:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>normal<span class="w">       </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>4nodes<span class="w">       </span>up<span class="w"> </span><span class="m">1</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>normal2<span class="w">      </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">      </span><span class="m">8</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">39</span>-46<span class="o">]</span>
 </span></code></pre></div></p>
 <p>查詢節點有閒置的GPU，以下是晶創25有閒置GPU的節點<br />
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn02<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">32</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn03<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">24</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn04<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">14</span>,mem<span class="o">=</span>1000G,gres/gpu<span class="o">=</span><span class="m">5</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn06<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">13</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn19<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">9</span>,mem<span class="o">=</span>1200G,gres/gpu<span class="o">=</span><span class="m">6</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn39<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">5</span>,mem<span class="o">=</span>200G,gres/gpu<span class="o">=</span><span class="m">1</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn43<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">84</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn02<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">32</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn03<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">24</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn04<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">14</span>,mem<span class="o">=</span>1000G,gres/gpu<span class="o">=</span><span class="m">5</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn06<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">13</span>,mem<span class="o">=</span>800G,gres/gpu<span class="o">=</span><span class="m">4</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn19<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">9</span>,mem<span class="o">=</span>1200G,gres/gpu<span class="o">=</span><span class="m">6</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn39<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">5</span>,mem<span class="o">=</span>200G,gres/gpu<span class="o">=</span><span class="m">1</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn43<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">84</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
 </span></code></pre></div></p>
 <h3 id="_6">容器打包</h3>
 <p>Singularity...</p>
@@ -2151,7 +2190,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月10日 18:02:13 CST">2025年12月10日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月11日 17:35:12 CST">2025年12月11日</span>
   </span>
 
     
