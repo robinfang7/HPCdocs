@@ -54,12 +54,6 @@ markdown_extensions:
 extra_javascript:
   - js/open_new_tab.js
 
-# --- 加入 Google Analytics 4 (GA4) 支援 ---
-#extra:
-#  analytics:
-#    provider: google
-#    property: G-RCE6GZB2CJ # 替換成您實際的 GA4 衡量 ID RCE6GZB2CJ
-
 plugins:
   - search  # 保持預設的搜尋功能
   - git-revision-date-localized:
