@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCE6GZB2CJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RCE6GZB2CJ');
+  </script>
+{% endblock %}

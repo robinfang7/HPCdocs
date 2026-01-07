@@ -23,6 +23,7 @@ theme:
         icon: material/weather-night # 暗黑模式的切換圖標
         name: 切換到亮色模式
   language: zh-TW            # 設定語言為繁體中文，介面會更親切
+  custom_dir: overrides
 #  custom_dir: docs/.templates
 
 # 建議加入這些 Markdown 擴充功能，讓技術文件更專業（支援數學公式、提示框）
@@ -54,10 +55,10 @@ extra_javascript:
   - js/open_new_tab.js
 
 # --- 加入 Google Analytics 4 (GA4) 支援 ---
-extra:
-  analytics:
-    provider: google
-    property: G-MBNY541X0F # 替換成您實際的 GA4 衡量 ID
+#extra:
+#  analytics:
+#    provider: google
+#    property: G-RCE6GZB2CJ # 替換成您實際的 GA4 衡量 ID RCE6GZB2CJ
 
 plugins:
   - search  # 保持預設的搜尋功能
