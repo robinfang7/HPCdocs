@@ -322,19 +322,19 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        入門指南
+        新手上路
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="入門指南">
+    <nav class="md-nav" aria-label="新手上路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1mobaxtermrank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)
+        範例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)
       
     </span>
   </a>
@@ -345,7 +345,7 @@
   <a href="#2mobaxterm25pytorchgpurank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
+        範例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
       
     </span>
   </a>
@@ -414,10 +414,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#miniconda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        容器打包
+        Miniconda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sinularity容器
       
     </span>
   </a>
@@ -478,7 +489,7 @@
   <span class="md-ellipsis">
     
   
-    🤖iService
+    🍰iService
   
 
     
@@ -1695,19 +1706,19 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        入門指南
+        新手上路
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="入門指南">
+    <nav class="md-nav" aria-label="新手上路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1mobaxtermrank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)
+        範例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)
       
     </span>
   </a>
@@ -1718,7 +1729,7 @@
   <a href="#2mobaxterm25pytorchgpurank" class="md-nav__link">
     <span class="md-ellipsis">
       
-        案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
+        範例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)
       
     </span>
   </a>
@@ -1787,10 +1798,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#miniconda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        容器打包
+        Miniconda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sinularity容器
       
     </span>
   </a>
@@ -1821,7 +1843,7 @@
 
   <h1>🎯入門指南</h1>
 
-<h2 id="_1">入門指南</h2>
+<h2 id="_1">新手上路</h2>
 <ol>
 <li>
 <p>註冊帳號<br />
@@ -1844,16 +1866,16 @@
 </li>
 <li>
 <p>登入主機，進行平行運算<br />
-    a. 計畫代號，若無計畫，參閱<a href="../iservice/">申請計畫</a><br />
-    b. 準備SSH連線軟體 (<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, Putty for Windows, Terminal(終端機) for Linux/MacOS)  </p>
+    a. 計畫代號，若無計畫，參閱<a href="../iservice/">申請計畫</a> 
+    b. 準備SSH連線軟體 (<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, <a href="https://putty.org/index.html">Putty</a> for Windows, Terminal(終端機) for Linux/MacOS)  </p>
 </li>
 </ol>
-<h3 id="1mobaxtermrank"><strong>案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)</strong></h3>
+<h3 id="1mobaxtermrank"><strong>範例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)</strong></h3>
 <ol>
 <li>開啟MobaXterm，點選Start local terminal  <br />
 <img alt="alt text" src="image.png" />  </li>
 <li>輸入ssh指令<br />
-<code>ssh &lt;account&gt;@f1-ilgn01.nchc.org.tw</code>  </li>
+<code>ssh &lt;user&gt;@f1-ilgn01.nchc.org.tw</code>  </li>
 <li>選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。<br />
 <img alt="alt text" src="image-1.png" />  </li>
 <li>在手機上點選推播<br />
@@ -1899,7 +1921,7 @@
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">}</span><span class="w"> </span>
 </span></code></pre></div></li>
-<li>編輯slurm腳本 <code>run_mpi.slurm</code>，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。<br />
+<li>編輯slurm腳本 <code>run_mpi.slurm</code>。<code>--account</code>是填寫計畫代號，紀錄運算資源與時間。<code>--nodes</code>是索取兩個節點，<code>--ntasks-per-node</code>是每個節點有兩個任務，<code>--cpus-per-task</code>是每個任務使用一個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。<br />
     <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#SBATCH --account=&lt;ProjectID&gt;      # (-A) iService Project ID</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#SBATCH --job-name=mpi_test        # (-J) Job name</span>
@@ -1921,9 +1943,9 @@
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nJob finished.&quot;</span>
 </span></code></pre></div></li>
 <li>執行腳本<code>sbatch run_mpi.slurm</code>，產生Job ID，觀察輸出結果。 <br />
-    <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_mpi.slurm
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>&lt;user&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_mpi.slurm
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">565924</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*565924*
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>&lt;user&gt;@ilgn01<span class="w"> </span>mpi_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*565924*
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Compiling<span class="w"> </span>code...
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Executing<span class="w"> </span>mpi_test...
@@ -1936,10 +1958,10 @@
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Job<span class="w"> </span>finished.
 </span></code></pre></div></li>
 </ol>
-<h3 id="2mobaxterm25pytorchgpurank"><strong>案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)</strong></h3>
+<h3 id="2mobaxterm25pytorchgpurank"><strong>範例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)</strong></h3>
 <ol>
 <li>開啟MobaXterm，輸入ssh指令<br />
-<code>ssh &lt;account&gt;@nano5.nchc.org.tw</code>  </li>
+<code>ssh &lt;user&gt;@nano5.nchc.org.tw</code>  </li>
 <li>編輯Pytorch程式<a href="train_multi_gpu.py">train_multi_gpu.py</a> <br />
     <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
@@ -2057,11 +2079,11 @@
 </span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nJob finished.\n&quot;</span>
 </span></code></pre></div></li>
 <li>執行腳本<code>sbatch run_ddp.slurm</code>，產生Job ID，觀察輸出結果。<br />
-    <div class="language-Shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_ddp.slurm
+    <div class="language-Shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>run_ddp.slurm
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">78728</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*78728*
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>pytorch_test<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>*78728*
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Starting<span class="w"> </span>distributed<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span>hgpn02<span class="w"> </span>and<span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>srun<span class="w"> </span>--ntasks<span class="o">=</span><span class="m">2</span><span class="w"> </span>--nodes<span class="o">=</span><span class="m">2</span><span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>-B<span class="w"> </span>/work:/work<span class="w"> </span>--nv<span class="w"> </span>/work/u8880716/sif/pytorch_24.05-py3.sif<span class="w"> </span>torchrun<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w">  </span>--nproc_per_node<span class="w"> </span><span class="m">2</span><span class="w">  </span>--rdzv_id<span class="w"> </span><span class="m">78728</span><span class="w">  </span>--rdzv_backend<span class="w"> </span>c10d<span class="w">  </span>--rdzv_endpoint<span class="w"> </span>hgpn02:29500<span class="w">  </span>train_multi_gpu.py
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>srun<span class="w"> </span>--ntasks<span class="o">=</span><span class="m">2</span><span class="w"> </span>--nodes<span class="o">=</span><span class="m">2</span><span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>-B<span class="w"> </span>/work:/work<span class="w"> </span>--nv<span class="w"> </span>/work/user/sif/pytorch_24.05-py3.sif<span class="w"> </span>torchrun<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w">  </span>--nproc_per_node<span class="w"> </span><span class="m">2</span><span class="w">  </span>--rdzv_id<span class="w"> </span><span class="m">78728</span><span class="w">  </span>--rdzv_backend<span class="w"> </span>c10d<span class="w">  </span>--rdzv_endpoint<span class="w"> </span>hgpn02:29500<span class="w">  </span>train_multi_gpu.py
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>....容器啟動訊息...
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
@@ -2095,7 +2117,7 @@
 <h2 id="_2">深入研究</h2>
 <p>完成第一次使用超級電腦，接下來更深入了解超級電腦的進階使用。</p>
 <h3 id="_3">資料傳輸</h3>
-<p>高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過FileZilla, WinSCP,scp 等軟體與指令傳輸資料從用戶電腦到HFS。 <br />
+<p>高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過<a href="https://filezilla-project.org/">FileZilla</a>, <a href="https://winscp.net/eng/download.php">WinSCP</a> 軟體與sftp指令傳輸資料從用戶電腦到HFS。 <br />
 <a href="https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA">晶創25</a> <br />
 <a href="https://man.twcc.ai/@f1-manual/transport_ip">創進一號</a> <br />
 <a href="https://man.twcc.ai/@TWCC-III-manual/SyGsFqRSt">台灣杉三號</a><br />
@@ -2103,24 +2125,24 @@
 <em>  高速檔案系統預設容量是100GB，若需增加容量可參閱<a href="https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=768">HFS容量設定</a>。<br />
 </em>  在Terminal介面查詢HFS容量。<br />
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 晶創25</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>hfsquota
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>hfsquota
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>PATH<span class="w">            </span>USED<span class="w">            </span>HARD<span class="w"> </span>LIMIT<span class="w">       </span>USAGE<span class="w"> </span>%<span class="w">  </span>STATUS
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>home:/&lt;account&gt;<span class="w">  </span><span class="m">391347720192</span><span class="w"> </span>B<span class="w">  </span><span class="m">1099511627776</span><span class="w"> </span>B<span class="w">  </span><span class="m">35</span><span class="w">       </span>ACTIVE
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>home:/&lt;user&gt;<span class="w">  </span><span class="m">391347720192</span><span class="w"> </span>B<span class="w">  </span><span class="m">1099511627776</span><span class="w"> </span>B<span class="w">  </span><span class="m">35</span><span class="w">       </span>ACTIVE
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>PATH<span class="w">            </span>USED<span class="w">             </span>HARD<span class="w"> </span>LIMIT<span class="w">        </span>USAGE<span class="w"> </span>%<span class="w">  </span>STATUS
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>work:/&lt;account&gt;<span class="w">  </span><span class="m">1794210246656</span><span class="w"> </span>B<span class="w">  </span><span class="m">10995116277760</span><span class="w"> </span>B<span class="w">  </span><span class="m">16</span><span class="w">       </span>ACTIVE
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>work:/&lt;user&gt;<span class="w">  </span><span class="m">1794210246656</span><span class="w"> </span>B<span class="w">  </span><span class="m">10995116277760</span><span class="w"> </span>B<span class="w">  </span><span class="m">16</span><span class="w">       </span>ACTIVE
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># 單位換算 1099511627776 Byte / 1024 /1024 /1024 = 1024 GB</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># 創進一號</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="o">[</span>&lt;account&gt;@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>mmlsquota<span class="w"> </span>-u<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>home1<span class="w"> </span>work1
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="o">[</span>&lt;user&gt;@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>mmlsquota<span class="w"> </span>-u<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>home1<span class="w"> </span>work1
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">                         </span>Block<span class="w"> </span>Limits<span class="w">                                    </span><span class="p">|</span><span class="w">     </span>File<span class="w"> </span>Limits
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>Filesystem<span class="w"> </span><span class="nb">type</span><span class="w">         </span>blocks<span class="w">      </span>quota<span class="w">      </span>limit<span class="w">   </span>in_doubt<span class="w">    </span>grace<span class="w"> </span><span class="p">|</span><span class="w">    </span>files<span class="w">   </span>quota<span class="w">    </span>limit<span class="w"> </span>in_doubt<span class="w">    </span>grace<span class="w">  </span>Remarks
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>home1<span class="w">      </span>USR<span class="w">          </span><span class="m">29</span>.83G<span class="w">         </span>1T<span class="w">     </span><span class="m">1</span>.098T<span class="w">       </span>320M<span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">    </span><span class="m">43156</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">       </span><span class="m">40</span><span class="w">     </span>none
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>work1<span class="w">      </span>USR<span class="w">          </span><span class="m">28</span>.37G<span class="w">       </span>100G<span class="w">       </span>200G<span class="w">          </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">       </span><span class="m">10</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">     </span>none
 </span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
 </span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1"># 台灣杉二號</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="o">[</span>&lt;account&gt;@un-ln01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>/usr/lpp/mmfs/bin/mmlsquota<span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>fs01<span class="w"> </span>fs02
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="o">[</span>&lt;user&gt;@un-ln01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>/usr/lpp/mmfs/bin/mmlsquota<span class="w"> </span>--block-size<span class="w"> </span>auto<span class="w"> </span>fs01<span class="w"> </span>fs02
 </span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                         </span>Block<span class="w"> </span>Limits<span class="w">                                    </span><span class="p">|</span><span class="w">     </span>File<span class="w"> </span>Limits
 </span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>Filesystem<span class="w"> </span><span class="nb">type</span><span class="w">         </span>blocks<span class="w">      </span>quota<span class="w">      </span>limit<span class="w">   </span>in_doubt<span class="w">    </span>grace<span class="w"> </span><span class="p">|</span><span class="w">    </span>files<span class="w">   </span>quota<span class="w">    </span>limit<span class="w"> </span>in_doubt<span class="w">    </span>grace<span class="w">  </span>Remarks
 </span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>fs01<span class="w">       </span>USR<span class="w">          </span><span class="m">3</span>.397T<span class="w">        </span>20T<span class="w">      </span><span class="m">20</span>.1T<span class="w">          </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">1427318</span><span class="w">       </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">     </span>none<span class="w"> </span>NCHC_AIcls.twcc.ai
@@ -2136,11 +2158,11 @@
 <p><a href="https://man.twcc.ai/@f1-manual/manual">創進一號:5.特殊工作節點操作流程</a>   </p>
 <h3 id="_5">查詢資源</h3>
 <p>查詢計畫錢包額度
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>wallet<span class="w"> </span>&lt;ProjectID&gt;
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>wallet<span class="w"> </span>&lt;ProjectID&gt;
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>PROJECT_ID:<span class="w"> </span>GOVxxxx32,<span class="w"> </span>PROJECT_NAME:<span class="w"> </span>NCHC-xxxxxxx-TWCC,<span class="w"> </span>SU_BALANCE:<span class="w"> </span><span class="m">482118</span>.6382
 </span></code></pre></div>
 查詢Partition狀態，以晶創25為例<br />
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sinfo
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sinfo
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>dev<span class="w">          </span>up<span class="w">    </span><span class="m">2</span>:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>normal<span class="w">       </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">     </span><span class="m">10</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">02</span>-06,17-21<span class="o">]</span>
@@ -2148,7 +2170,7 @@
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>normal2<span class="w">      </span>up<span class="w"> </span><span class="m">2</span>-00:00:00<span class="w">      </span><span class="m">8</span><span class="w">    </span>mix<span class="w"> </span>hgpn<span class="o">[</span><span class="m">39</span>-46<span class="o">]</span>
 </span></code></pre></div></p>
 <p>查詢節點有閒置的GPU，以下是晶創25有閒置GPU的節點<br />
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">[</span>&lt;account&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">[</span>&lt;user&gt;@cbi-lgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;NodeName|AllocTRES&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/NodeName/{N; /gres\/gpu=8/!p}&#39;</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn02<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">32</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn03<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
@@ -2164,7 +2186,97 @@
 </span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="nv">NodeName</span><span class="o">=</span>hgpn43<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">56</span>
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">84</span>,mem<span class="o">=</span>1400G,gres/gpu<span class="o">=</span><span class="m">7</span>
 </span></code></pre></div></p>
-<h3 id="_6">容器打包</h3>
+<h3 id="miniconda">Miniconda</h3>
+<p>Miniconda是創建python虛擬環境的軟體，為不同專案創造獨立的虛擬環境，避免專案之間套件的版本衝突。  </p>
+<p><strong>範例：在創進一號建立mpi4py的虛擬環境，引用虛擬環境執行python平行運算</strong><br />
+1. 在登入節點命令列，新增名稱為mpi的虛擬環境<br />
+<code>conda create -n mpi python=3.10 -y</code><br />
+2. 查詢目前的虛擬環境<br />
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">[</span>user@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># conda environments:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">#</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>mpi<span class="w">                      </span>/home/user/.conda/envs/mpi
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>base<span class="w">                     </span>/pkg/tools/miniconda3
+</span></code></pre></div>
+3. 進入mpi虛擬環境，命令列前方出現虛擬環境名稱<br />
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">[</span>user@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>mpi
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">(</span>mpi<span class="o">)</span><span class="w"> </span><span class="o">[</span>user@ilgn01<span class="w"> </span>~<span class="o">]</span>$
+</span></code></pre></div>
+4. 虛擬環境初始化<br />
+<code>conda init</code><br />
+5. 安裝平行運算套件<br />
+<code>conda install -c conda-forge mpi4py -y</code><br />
+6. 退出虛擬環境<br />
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">(</span>mpi<span class="o">)</span><span class="w"> </span><span class="o">[</span>user@ilgn01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>deactivate
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="o">[</span>user@ilgn01<span class="w"> </span>~<span class="o">]</span>$
+</span></code></pre></div>
+7. 編輯mpi程式mpi_test.py<br />
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">hostname</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="c1"># 各節點進行模擬運算</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rank</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Rank </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s2"> finished task.&quot;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1"># 收集所有節點結果</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="n">results</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== MPI 平行運算結果 ===&quot;</span><span class="p">)</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;總執行時間: </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> 秒 (共 </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> 個處理程序)&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+8. 編輯腳本mpi.slurm<br />
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1">#SBATCH --account=&lt;Project_ID&gt;       # (-A) iService Project ID</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1">#SBATCH --job-name=mpitest             # (-J) Job name</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">#SBATCH --partition=development       # (-p) Slurm partition</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">#SBATCH --nodes=2                     # (-N) Maximum number of nodes to be allocated</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">#SBATCH --cpus-per-task=1             # (-c) Number of cores per MPI task</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">#SBATCH --ntasks-per-node=2         # Maximum number of tasks on each node</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">#SBATCH --time=00:30:00               # (-t) Wall time limit (days-hrs:min:sec)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1">#SBATCH --output=%x_%j.out           # (-o) Path to the standard output file</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>module<span class="w"> </span>purge
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>module<span class="w"> </span>load<span class="w"> </span>tools/miniconda3
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>conda<span class="w"> </span>activate<span class="w"> </span>mpi
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SLURM_NODELIST=</span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SLURM_NTASKS=</span><span class="nv">$SLURM_NTASKS</span><span class="s2">&quot;</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>python<span class="w"> </span>mpi_test.py
+</span></code></pre></div>
+9. 執行腳本
+    <div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">[</span>user@ilgn01<span class="w"> </span>opensees<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>mpi.slurm
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">608628</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="o">[</span>user@ilgn01<span class="w"> </span>opensees<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>mpitest_608628.out
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span>Message<span class="w"> </span>from<span class="w"> </span>TWCC<span class="w"> </span>HPC<span class="w"> </span>admin
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span>-----------------------
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span>loading<span class="w"> </span>miniconda3<span class="w"> </span>with<span class="w"> </span>conda<span class="w"> </span><span class="m">4</span>.8.4/python<span class="w"> </span><span class="m">3</span>.7
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span>docs<span class="w"> </span>:<span class="w"> </span>https://hackmd.io/@kmo/twcc_hpc_conda
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span>-----------------------
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="nv">SLURM_NODELIST</span><span class="o">=</span>icpnp<span class="o">[</span><span class="m">126</span>-127<span class="o">]</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="nv">SLURM_NTASKS</span><span class="o">=</span><span class="nv">4</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="o">===</span><span class="w"> </span>MPI<span class="w"> </span><span class="nv">平行運算結果</span><span class="w"> </span><span class="o">===</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>Rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>on<span class="w"> </span>icpnp126<span class="w"> </span>finished<span class="w"> </span>task.
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>Rank<span class="w"> </span><span class="m">1</span><span class="w"> </span>on<span class="w"> </span>icpnp126<span class="w"> </span>finished<span class="w"> </span>task.
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>Rank<span class="w"> </span><span class="m">2</span><span class="w"> </span>on<span class="w"> </span>icpnp127<span class="w"> </span>finished<span class="w"> </span>task.
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>Rank<span class="w"> </span><span class="m">3</span><span class="w"> </span>on<span class="w"> </span>icpnp127<span class="w"> </span>finished<span class="w"> </span>task.
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>總執行時間:<span class="w"> </span><span class="m">2</span>.30<span class="w"> </span>秒<span class="w"> </span><span class="o">(</span>共<span class="w"> </span><span class="m">4</span><span class="w"> </span>個處理程序<span class="o">)</span>
+</span></code></pre></div></p>
+<h3 id="sinularity">Sinularity容器</h3>
 <p>Singularity...</p>
 
 
@@ -2186,7 +2298,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月11日 17:35:12 CST">2025年12月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年1月8日 17:00:19 CST">2026年1月8日</span>
   </span>
 
     
