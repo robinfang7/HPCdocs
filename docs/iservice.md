@@ -12,6 +12,7 @@
     - [政府與法人計畫](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=107)
     - [企業與個人計畫](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=300)
 
+- [購買額度](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=13)
 - [加入計畫成員](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=23)
 - [設定成員的子錢包](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=20)
 - [設定成員為管理員](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa_single.php?qa_code=25)

@@ -13,7 +13,7 @@ hide:
 
 ## [🎯入門指南](getting-started.md)
 ## [🖥️超級電腦](supercomputer.md)
-## [🤖iService](iservice.md)
+## [🍰iService](iservice.md)
 ## [📱應用程式](apps/application.md)
 ## [🤔常見問題](https://iservice.nchc.org.tw/nchc_service/nchc_service_qa.php?target=42)
 

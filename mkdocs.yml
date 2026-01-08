@@ -71,7 +71,7 @@ nav:
   - 首頁: index.md
   - 🎯入門指南: getting-started.md
   - 🖥️超級電腦: supercomputer.md
-  - 🤖iService: iservice.md
+  - 🍰iService: iservice.md
   - 📱應用程式: 
       - 計算化學:
           - Gaussian: apps/chemistry/gaussian.md

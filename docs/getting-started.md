@@ -1,4 +1,4 @@
-## 入門指南
+## 新手上路
 1. 註冊帳號  
     a. 點選[iService](https://iservice.nchc.org.tw/nchc_service/index.php)網頁  
     b. 點選**註冊**  
@@ -15,14 +15,14 @@
     NCHC的超級電腦的登入方式採用二階段認證，第一個是主機帳號的密碼，第二個是OTP(One Time Password)。  
 
 3. 登入主機，進行平行運算  
-    a. 計畫代號，若無計畫，參閱[申請計畫](iservice.md)  
-    b. 準備SSH連線軟體 ([MobaXterm](https://mobaxterm.mobatek.net/), Putty for Windows, Terminal(終端機) for Linux/MacOS)  
+    a. 計畫代號，若無計畫，參閱[申請計畫](iservice.md) 
+    b. 準備SSH連線軟體 ([MobaXterm](https://mobaxterm.mobatek.net/), [Putty](https://putty.org/index.html) for Windows, Terminal(終端機) for Linux/MacOS)  
 
-### **案例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)**  
+### **範例1：用MobaXterm登入創進一號，執行平行運算程式，回傳節點和處理核心的序號(Rank)**  
 1. 開啟MobaXterm，點選Start local terminal    
     ![alt text](getting-started/image.png)  
 2. 輸入ssh指令  
-    `ssh <account>@f1-ilgn01.nchc.org.tw`  
+    `ssh <user>@f1-ilgn01.nchc.org.tw`  
 3. 選擇OPT方式，這裡選2，用手機執行IDExpert的推播。輸入主機帳號的密碼。  
     ![alt text](getting-started/image-1.png)  
 4. 在手機上點選推播  
@@ -69,7 +69,7 @@
         return 0;
     } 
     ```  
-7. 編輯slurm腳本 `run_mpi.slurm`，索取兩個節點，每個節點有兩個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。  
+7. 編輯slurm腳本 `run_mpi.slurm`。`--account`是填寫計畫代號，紀錄運算資源與時間。`--nodes`是索取兩個節點，`--ntasks-per-node`是每個節點有兩個任務，`--cpus-per-task`是每個任務使用一個CPU核心。啟用Inte mpi compiler，編譯mpi_test.c並輸出mpi_test執行檔，執行mpi_test執行檔的平行運算。  
     ```shell
     #!/bin/bash
     #SBATCH --account=<ProjectID>      # (-A) iService Project ID
@@ -93,9 +93,9 @@
     ```   
 8. 執行腳本`sbatch run_mpi.slurm`，產生Job ID，觀察輸出結果。   
     ```shell
-    [<account>@ilgn01 mpi_test]$ sbatch run_mpi.slurm
+    [<user>@ilgn01 mpi_test]$ sbatch run_mpi.slurm
     Submitted batch job 565924
-    [<account>@ilgn01 mpi_test]$ cat *565924*
+    [<user>@ilgn01 mpi_test]$ cat *565924*
     Compiling code...
 
     Executing mpi_test...
@@ -107,9 +107,9 @@
 
     Job finished.
     ```
-### **案例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)**       
+### **範例2：用MobaXterm登入晶創25，執行Pytorch平行程式，回傳節點和GPU核心的序號(Rank)**       
 1. 開啟MobaXterm，輸入ssh指令  
-    `ssh <account>@nano5.nchc.org.tw`  
+    `ssh <user>@nano5.nchc.org.tw`  
 2. 編輯Pytorch程式[train_multi_gpu.py](getting-started/train_multi_gpu.py)   
     ```python
     import os
@@ -231,11 +231,11 @@
     ```           
 5. 執行腳本`sbatch run_ddp.slurm`，產生Job ID，觀察輸出結果。  
     ```Shell
-    [<account>@cbi-lgn01 pytorch_test]$ sbatch run_ddp.slurm
+    [<user>@cbi-lgn01 pytorch_test]$ sbatch run_ddp.slurm
     Submitted batch job 78728
-    [<account>@cbi-lgn01 pytorch_test]$ cat *78728*
+    [<user>@cbi-lgn01 pytorch_test]$ cat *78728*
     Starting distributed job with MASTER_ADDR=hgpn02 and MASTER_PORT=29500
-    srun --ntasks=2 --nodes=2 singularity run -B /work:/work --nv /work/u8880716/sif/pytorch_24.05-py3.sif torchrun  --nnodes 2  --nproc_per_node 2  --rdzv_id 78728  --rdzv_backend c10d  --rdzv_endpoint hgpn02:29500  train_multi_gpu.py
+    srun --ntasks=2 --nodes=2 singularity run -B /work:/work --nv /work/user/sif/pytorch_24.05-py3.sif torchrun  --nnodes 2  --nproc_per_node 2  --rdzv_id 78728  --rdzv_backend c10d  --rdzv_endpoint hgpn02:29500  train_multi_gpu.py
 
     ....容器啟動訊息...
 
@@ -268,7 +268,7 @@
 ## 深入研究
 完成第一次使用超級電腦，接下來更深入了解超級電腦的進階使用。
 ### 資料傳輸 
-高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過FileZilla, WinSCP,scp 等軟體與指令傳輸資料從用戶電腦到HFS。   
+高速檔案系統(Hyper File Syetem, HFS)是超級電腦專用的儲存空間，可透過[FileZilla](https://filezilla-project.org/), [WinSCP](https://winscp.net/eng/download.php) 軟體與sftp指令傳輸資料從用戶電腦到HFS。   
 [晶創25](https://man.twcc.ai/Yg_dk6n2T_-Y2Pmx3fXzAA)   
 [創進一號](https://man.twcc.ai/@f1-manual/transport_ip)   
 [台灣杉三號](https://man.twcc.ai/@TWCC-III-manual/SyGsFqRSt)  
@@ -277,24 +277,24 @@
 *  在Terminal介面查詢HFS容量。  
 ```shell
 # 晶創25
-[<account>@cbi-lgn01 ~]$ hfsquota
+[<user>@cbi-lgn01 ~]$ hfsquota
 PATH            USED            HARD LIMIT       USAGE %  STATUS
-home:/<account>  391347720192 B  1099511627776 B  35       ACTIVE
+home:/<user>  391347720192 B  1099511627776 B  35       ACTIVE
 
 PATH            USED             HARD LIMIT        USAGE %  STATUS
-work:/<account>  1794210246656 B  10995116277760 B  16       ACTIVE
+work:/<user>  1794210246656 B  10995116277760 B  16       ACTIVE
 
 # 單位換算 1099511627776 Byte / 1024 /1024 /1024 = 1024 GB
 
 # 創進一號
-[<account>@ilgn01 ~]$ mmlsquota -u $(whoami) --block-size auto home1 work1
+[<user>@ilgn01 ~]$ mmlsquota -u $(whoami) --block-size auto home1 work1
                          Block Limits                                    |     File Limits
 Filesystem type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
 home1      USR          29.83G         1T     1.098T       320M     none |    43156       0        0       40     none
 work1      USR          28.37G       100G       200G          0     none |       10       0        0        0     none
 
 # 台灣杉二號
-[<account>@un-ln01 ~]$ /usr/lpp/mmfs/bin/mmlsquota --block-size auto fs01 fs02
+[<user>@un-ln01 ~]$ /usr/lpp/mmfs/bin/mmlsquota --block-size auto fs01 fs02
                          Block Limits                                    |     File Limits
 Filesystem type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
 fs01       USR          3.397T        20T      20.1T          0     none |  1427318       0        0        0     none NCHC_AIcls.twcc.ai
@@ -311,12 +311,12 @@ fs02       USR          185.5G        10T      10.1T       640M     none |    90
 ### 查詢資源
 查詢計畫錢包額度
 ```shell
-[<account>@cbi-lgn01 ~]$ wallet <ProjectID>
+[<user>@cbi-lgn01 ~]$ wallet <ProjectID>
 PROJECT_ID: GOVxxxx32, PROJECT_NAME: NCHC-xxxxxxx-TWCC, SU_BALANCE: 482118.6382
 ```  
 查詢Partition狀態，以晶創25為例  
 ```shell
-[<account>@cbi-lgn01 ~]$ sinfo
+[<user>@cbi-lgn01 ~]$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 dev          up    2:00:00     10    mix hgpn[02-06,17-21]
 normal       up 2-00:00:00     10    mix hgpn[02-06,17-21]
@@ -326,7 +326,7 @@ normal2      up 2-00:00:00      8    mix hgpn[39-46]
 
 查詢節點有閒置的GPU，以下是晶創25有閒置GPU的節點  
 ```shell
-[<account>@cbi-lgn01 ~]$ scontrol show node | grep -E 'NodeName|AllocTRES' | sed -n '/NodeName/{N; /gres\/gpu=8/!p}'
+[<user>@cbi-lgn01 ~]$ scontrol show node | grep -E 'NodeName|AllocTRES' | sed -n '/NodeName/{N; /gres\/gpu=8/!p}'
 NodeName=hgpn02 Arch=x86_64 CoresPerSocket=56
    AllocTRES=cpu=32,mem=1400G,gres/gpu=7
 NodeName=hgpn03 Arch=x86_64 CoresPerSocket=56
@@ -342,7 +342,105 @@ NodeName=hgpn39 Arch=x86_64 CoresPerSocket=56
 NodeName=hgpn43 Arch=x86_64 CoresPerSocket=56
    AllocTRES=cpu=84,mem=1400G,gres/gpu=7
 ```  
-### 容器打包
+### Miniconda
+Miniconda是創建python虛擬環境的軟體，為不同專案創造獨立的虛擬環境，避免專案之間套件的版本衝突。  
+
+**範例：在創進一號建立mpi4py的虛擬環境，引用虛擬環境執行python平行運算**  
+1. 在登入節點命令列，新增名稱為mpi的虛擬環境  
+    `conda create -n mpi python=3.10 -y`  
+2. 查詢目前的虛擬環境  
+    ```shell
+    [user@ilgn01 ~]$ conda env list
+    # conda environments:
+    #
+    mpi                      /home/user/.conda/envs/mpi
+    base                     /pkg/tools/miniconda3
+    ```  
+3. 進入mpi虛擬環境，命令列前方出現虛擬環境名稱  
+    ```shell
+    [user@ilgn01 ~]$ conda activate mpi
+    (mpi) [user@ilgn01 ~]$
+    ```  
+4. 虛擬環境初始化  
+    `conda init`  
+5. 安裝平行運算套件  
+    `conda install -c conda-forge mpi4py -y`  
+6. 退出虛擬環境  
+    ```shell
+    (mpi) [user@ilgn01 ~]$ conda deactivate
+    [user@ilgn01 ~]$
+    ```  
+7. 編輯mpi程式mpi_test.py  
+    ```python  
+    from mpi4py import MPI
+    import time
+    import socket
+
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    size = comm.Get_size()
+    hostname = socket.gethostname()
+
+    start_time = time.time()
+
+    # 各節點進行模擬運算
+    time.sleep(2 + rank * 0.1)
+    result = f"Rank {rank} on {hostname} finished task."
+
+    # 收集所有節點結果
+    results = comm.gather(result, root=0)
+
+    end_time = time.time()
+
+    if rank == 0:
+        print("=== MPI 平行運算結果 ===")
+        for r in results:
+            print(r)
+        print(f"總執行時間: {end_time - start_time:.2f} 秒 (共 {size} 個處理程序)")
+    ```  
+8. 編輯腳本mpi.slurm  
+    ```shell
+    #!/bin/bash
+    #SBATCH --account=<Project_ID>       # (-A) iService Project ID
+    #SBATCH --job-name=mpitest             # (-J) Job name
+    #SBATCH --partition=development       # (-p) Slurm partition
+    #SBATCH --nodes=2                     # (-N) Maximum number of nodes to be allocated
+    #SBATCH --cpus-per-task=1             # (-c) Number of cores per MPI task
+    #SBATCH --ntasks-per-node=2         # Maximum number of tasks on each node
+    #SBATCH --time=00:30:00               # (-t) Wall time limit (days-hrs:min:sec)
+    #SBATCH --output=%x_%j.out           # (-o) Path to the standard output file
+
+    module purge
+    module load tools/miniconda3
+
+    conda activate mpi
+
+    echo "SLURM_NODELIST=$SLURM_NODELIST"
+    echo "SLURM_NTASKS=$SLURM_NTASKS"
+    mpirun -np $SLURM_NTASKS python mpi_test.py
+    ```  
+9. 執行腳本
+    ```shell
+    [user@ilgn01 opensees]$ sbatch mpi.slurm
+    Submitted batch job 608628
+    [user@ilgn01 opensees]$ cat mpitest_608628.out
+        Message from TWCC HPC admin
+        -----------------------
+        loading miniconda3 with conda 4.8.4/python 3.7
+        docs : https://hackmd.io/@kmo/twcc_hpc_conda
+        -----------------------
+
+    SLURM_NODELIST=icpnp[126-127]
+    SLURM_NTASKS=4
+    === MPI 平行運算結果 ===
+    Rank 0 on icpnp126 finished task.
+    Rank 1 on icpnp126 finished task.
+    Rank 2 on icpnp127 finished task.
+    Rank 3 on icpnp127 finished task.
+    總執行時間: 2.30 秒 (共 4 個處理程序)
+    ```  
+
+### Sinularity容器
 Singularity...
 
 
